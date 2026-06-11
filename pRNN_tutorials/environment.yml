@@ -1,0 +1,9 @@
+name: pRNN_tutorials
+channels:
+  - defaults
+dependencies:
+  - python=3.14
+  - matplotlib
+  - numpy
+  - conda-forge::ipykernel
+prefix: C:\Users\ghosh\anaconda3\envs\pRNN_tutorials

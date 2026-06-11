@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.vscode*
+
+# Egg info
+pRNN_tutorials.egg-info/
+
+# GIFS
+*.gif
+
+# Answers 
+answers.md
