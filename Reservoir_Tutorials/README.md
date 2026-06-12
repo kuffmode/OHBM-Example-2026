@@ -1,7 +1,7 @@
 # Hands-On Experiments: Memory capacity in reservoir computing models 
 
 **Course:** Promises and Perils of Connectome-Constrained Neuro-AI Models 
-**Semester:** May 2026  
+**Semester:** OHBM 2026  
 
 ---
 
