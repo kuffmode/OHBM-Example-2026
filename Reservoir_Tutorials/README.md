@@ -58,4 +58,4 @@ If you use these materials or build upon them, please cite the following works:
 
 ## License
 
-These materials are shared for educational purposes. Please contact the author for permissions beyond personal and classroom use.
+These materials are shared for educational purposes. Please contact the author (f.hadaeghi@uke.de) for permissions beyond personal and classroom use.
