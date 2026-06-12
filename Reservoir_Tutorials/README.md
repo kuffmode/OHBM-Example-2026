@@ -7,25 +7,12 @@
 
 ## Overview
 
-This folder contains three Jupyter notebooks designed as hands-on practical sessions accompanying a course on connectome-constrained recurrent neural networks and reservoir computing models. The experiments are built around the **Memory Capacity (MC) task**, a standard benchmark in the reservoir computing community that measures how well a recurrent network can reconstruct delayed versions of a past input signal.
+This folder contains three Jupyter notebooks designed as hands-on practical sessions accompanying a course on connectome-constrained recurrent neural networks and reservoir computing models. A fully trained vanilla RNN (tanh activation, PyTorch) is evaluated on the memory capacity task introduced in the reservoir computing tutorial. 
 
----
+Two training regimes are compared:
+- **Part A — Full BPTT:** gradient flows through the entire training sequence; fair comparison to the ESN.
+- **Part B — Chunked BPTT:** gradients are truncated at chunk boundaries; demonstrates the effect of truncation on memory capacity as a function of chunk size.
 
-## Notebooks
-
-### `experiment_1_rc_random_mc.ipynb` — Reservoir Computing with Random Parameters
-An Echo State Network (ESN) is evaluated on the memory capacity (MC) task without any parameter tuning. Five independent trials are run and averaged. Diagnostic plots include signal reconstruction, reservoir neuron traces, input and output weight distributions, and the memory profile (r² per lag).
-
-### `experiment_2_rc_tuned_mc.ipynb` — Reservoir Computing with Hyperparameter Tuning
-A grid search is performed over spectral radius, sparsity, and input scaling. The best configuration is identified by mean test MC over multiple random seeds and visualised with the same diagnostic plots as Experiment 1.
-
-### `experiment_3_rc_connectome_mc.ipynb` —Memory Capacity of Empirical Connectomes
-Given an empirical connectome, MC is evaluated in four network variants derived from the connectome:
-
-- **Structured — the original empirical connectome as loaded
-- **Symmetrized structured —  (𝑊+𝑊𝑇)/2 , eliminating all asymmetry
-- **Shuffled (null) — degree-preserving rewired network 
-- **Symmetrized shuffled — the same symmetrization applied to the null network
 ---
 
 ## Requirements
@@ -35,10 +22,10 @@ numpy
 scipy
 scikit-learn
 matplotlib
-echoes
+torch
 ```
 
-All notebooks are designed to run on **Google Colab**. The `echoes` library is installed via `pip` at the top of Experiments 1-3. 
+The notebook is designed to run on **Google Colab**. 
 
 ---
 
@@ -46,7 +33,6 @@ All notebooks are designed to run on **Google Colab**. The `echoes` library is i
 
 If you use these materials or build upon them, please cite the following works:
 
-> Damicelli, Fabrizio, Claus C. Hilgetag, and Alexandros Goulas. "Brain connectivity meets reservoir computing." PLoS Computational Biology 18.11 (2022): e1010639.
 
 > Hadaeghi, Fatemeh, Kayson Fakhar, and Claus C. Hilgetag. "Controlling reciprocity in binary and weighted networks: A novel density-conserving approach." *Chaos: An Interdisciplinary Journal of Nonlinear Science* 36.2 (2026).
 
