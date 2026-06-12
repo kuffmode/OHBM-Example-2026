@@ -1,4 +1,4 @@
-# Hands-On Experiments: Memory capacity in reservoir computing models
+# Hands-On Experiments: Memory capacity in vanilla RNNs compared to reservoir computing
 
 **Course:** Promises and Perils of Connectome-Constrained Neuro-AI Models  
 **Semester:** OHBM 2026 
@@ -9,15 +9,7 @@ This folder contains one Jupyter notebook designed as hands-on practical session
 
 ---
 
-## Notebooks
-
-### `experiment_1_rc_random.ipynb` — Reservoir Computing with Random Parameters
-An Echo State Network (ESN) is evaluated on the MC task without any parameter tuning. Five independent trials are run and averaged. Diagnostic plots include signal reconstruction, reservoir neuron traces, input and output weight distributions, and the memory profile (r² per lag).
-
-### `experiment_2_rc_tuned.ipynb` — Reservoir Computing with Hyperparameter Tuning
-A grid search is performed over spectral radius, sparsity, and input scaling. The best configuration is identified by mean test MC over multiple random seeds and visualised with the same diagnostic plots as Experiment 1.
-
-### `experiment_3_vanilla_rnn.ipynb` — Vanilla RNN trained with BPTT (PyTorch)
+### `MC_vanilla_rnn.ipynb` — Vanilla RNN trained with BPTT (PyTorch)
 A fully trained vanilla RNN (tanh activation, PyTorch) is evaluated on the same task. Two training regimes are compared:
 - **Part A — Full BPTT:** gradient flows through the entire training sequence; fair comparison to the ESN.
 - **Part B — Chunked BPTT:** gradients are truncated at chunk boundaries; demonstrates the effect of truncation on memory capacity as a function of chunk size.
@@ -35,7 +27,7 @@ echoes
 torch
 ```
 
-All notebooks are designed to run on **Google Colab**. The `echoes` library is installed via `pip` at the top of Experiments 1 and 2. PyTorch is pre-installed on Colab.
+All notebooks are designed to run on **Google Colab**. PyTorch is pre-installed on Colab.
 
 ---
 
